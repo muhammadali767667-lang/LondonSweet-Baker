@@ -1,0 +1,194 @@
+:root {
+    --light-pink: #ffb6c1;
+    --dark-orange: #ff8c00;
+    --light-orange: #ffdab9;
+    --white: #ffffff;
+    --dark-pink: #db7093;
+    --text-dark: #333333;
+    --text-light: #f8f8f8;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--dark-orange);
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.sweets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sweet-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sweet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.sweet-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sweet-content {
+    padding: 20px;
+}
+
+.sweet-title {
+    font-size: 1.5rem;
+    color: var(--dark-orange);
+    margin: 0 0 10px 0;
+}
+
+.sweet-description {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.sweet-price {
+    font-size: 1.3rem;
+    color: var(--dark-pink);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+}
+
+
+.btn-nutrition {
+    background-color: var(--light-pink);
+    color: var(--text-dark);
+}
+
+.btn-nutrition:hover {
+    background-color: var(--dark-pink);
+    color: var(--text-light);
+}
+
+.price-per {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Nutrition Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nutrition-modal {
+    background-color: var(--white);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.modal-overlay.active .nutrition-modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--dark-orange);
+}
+
+.modal-title {
+    color: var(--dark-orange);
+    margin-top: 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section-title {
+    color: var(--dark-pink);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--light-pink);
+    padding-bottom: 5px;
+}
+
+.modal-content {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.nutrition-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.nutrition-item {
+    background-color: var(--light-orange);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .nutrition-facts {
+        grid-template-columns: 1fr;
+    }
+}
